@@ -14,7 +14,6 @@ body {
 
 .card {
   flow: vertical;
-  border-spacing: *;
   width: 200px;
   height: 240px;
   border-radius: 10px;
@@ -102,12 +101,15 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: rgb(92, 92, 92);
-  padding-bottom: 6px;
-  padding-top: 6px;
+  padding: 6px 0px 6px 0px;
   width: *;
   height: 21px;
-  margin: 8px;
+  margin: 8px 8px 0px 8px;
   text-selection-caret-color: rgb(50, 205, 255);
+}
+
+.answer.incorrect {
+  border-color: red !important;
 }
 
 .answer:empty:focus::after {
@@ -124,4 +126,17 @@ body {
 
 .answer:focus {
   border-color: rgb(50, 205, 255);
+}
+
+.idk {
+  text-transform: uppercase;
+  color: rgb(50, 205, 255);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  width: *;
+  text-align: center;
+  height: 12px;
+  margin: 2px 0px 2px 0px;
+  padding: 0px 0px 0px 0px;
 }

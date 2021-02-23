@@ -30,12 +30,14 @@ async function displayCard(Q, A) {
   const card = <div class="card" answer={A}>
     <span class="question">{Q}</span>
     <input class="answer" novalue="Enter the answer" />
+    <span class="idk">I don't know</span>
   </div>;
 
   $('body').append(card);
   $('.answer').focus();
 
   $('.answer').on('keydown', async function (evt) {
+    this.classList.remove('incorrect');
     if (evt.keyCode === SPACE) {
       this.parentElement.classList.add('flip');
     }
@@ -46,6 +48,7 @@ async function displayCard(Q, A) {
         onCorrectAnswer();
       }
       if (!correct && !this.parentElement.classList.contains('incorrect')) {
+        this.classList.add('incorrect');
         this.parentElement.classList.add('incorrect', 'incorrect-a');
         await seconds(0.05);
         this.parentElement.classList.add('incorrect-b');

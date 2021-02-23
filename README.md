@@ -25,3 +25,6 @@ Modify [cards.json](cards.json) to suit your needs.
 
 This application uses [Sciter Engine](https://sciter.com), © Terra Informatica Software, Inc.
 
+## Attribution
+
+Inspired by [Stretchly](https://github.com/hovancik/stretchly) and [RinyCards](https://github.com/devicedev/riny-cards).

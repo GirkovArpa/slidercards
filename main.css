@@ -1,0 +1,127 @@
+html {
+  font-family: Roboto, sans-serif;
+  background: transparent;
+  overflow: none;
+  size: 100%;
+}
+
+body {
+  background: transparent;
+  size: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.card {
+  flow: vertical;
+  border-spacing: *;
+  width: 200px;
+  height: 240px;
+  border-radius: 10px;
+  position: absolute;
+  left: 100vw;
+  top: 50%;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 3px 10px 0px;
+  background-color: white;
+  background-position: 0 240px;
+  background-image: url(face1.png);
+  background-repeat: no-repeat;
+  transform: translate(0, -50%) rotate(0deg);
+  transition: background-position .5s bounce-in, transform .5s expo-out, left .5s expo-out;
+}
+
+.card.flip {}
+
+.card::marker {
+  border-radius: 10px;
+  z-index: -1.1;
+  size: *;
+  background-color: transparent;
+  opacity: 1;
+  background-position: 0px 240px;
+  background-image: url(assets/images/face1.png);
+  background-repeat: no-repeat;
+  transition: background-position .5s bounce-in;
+}
+
+.card.a {
+  transform: translate(-50%, -50%) rotate(0deg);
+  left: 50%;
+}
+
+.card.b::marker {
+  background-position: 0 0;
+  z-index: 1.1;
+}
+
+.card.c {
+  transform: translate(-30%, -50%) rotate(10deg);
+}
+
+.card.c::marker {
+  background-image: url(assets/images/face2.png);
+}
+
+.card.c-2 {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.card.d {
+  transform: translate(-50%, -50%) rotate(0deg);
+  left: -100px;
+}
+
+.card.incorrect {
+  transition: left 0.05s linear;
+}
+
+.card.incorrect-a {
+  left: 49%;
+}
+
+.card.incorrect-b {
+  left: 51%;
+}
+
+.question {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(80, 80, 80);
+  margin: auto;
+  width: *;
+  height: *;
+  vertical-align: middle;
+}
+
+.answer {
+  text-align: center;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid rgb(196, 196, 196);
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(92, 92, 92);
+  padding-bottom: 6px;
+  padding-top: 6px;
+  width: *;
+  height: 21px;
+  margin: 8px;
+  text-selection-caret-color: rgb(50, 205, 255);
+}
+
+.answer:empty:focus::after {
+  content: attr(novalue);
+  width: *;
+  height: 21px;
+  padding: 6px 0px;
+  color: rgb(196, 196, 196);
+}
+
+.answer:empty {
+  color: rgb(196, 196, 196);
+}
+
+.answer:focus {
+  border-color: rgb(50, 205, 255);
+}

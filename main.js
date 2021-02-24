@@ -75,9 +75,12 @@ async function displayCard(Q, A) {
 }
 
 async function onCorrectAnswer() {
-  $('.card').classList.add('flyout');
-  await seconds(1.3);
-  $('.card').remove();
+  $('.card').classList.add('animate');
+  $('.animate').on('animationend',async () => {
+    $('.card').classList.add('flyout');
+    await seconds(0.3);
+    $('.card').remove();
+  });
 }
 
 async function main() {

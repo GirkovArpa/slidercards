@@ -27,8 +27,8 @@ body {
 }
 
 .card.flyin {
-  transform: translate(-50%, -50%) rotate(0deg) scale(1.0, 1.0);
   left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.0, 1.0);
 }
 
 @keyframes flyout {
@@ -36,26 +36,37 @@ body {
     foreground-image: url(assets/images/face1.png);
     foreground-position: 0px 240px;
     foreground-repeat: no-repeat;
+    transform: translate(-50%, -50%) rotate(0deg); 
   }
-  15% {
+  40% {
+    foreground-image: url(assets/images/face1.png);
     foreground-position: 0px 0px;
     transition: foreground-position 1s bounce-in;
-    transform: translate(-50%, -50%) rotate(10deg); 
+    transform: translate(-50%, -50%) rotate(0deg); 
   }
-  30% {
+  45% {
+    foreground-image: url(assets/images/face2.png) 0px 0px no-repeat;
+    transform: translate(-50%, -50%) rotate(5deg); 
+  }
+  70% {
     foreground-image: url(assets/images/face2.png) 0px 0px no-repeat;
     transform: translate(-30%, -50%) rotate(10deg); 
   }
-  80% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
   100% {
-    transform: translate(-1000%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(5deg); 
   }
 }
 
+.card.animate {
+  foreground-image: url(assets/images/face2.png) 0px 0px no-repeat;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: linear flyout 1s;
+}
+
 .card.flyout {
-  animation: linear flyout 1.5s;
+  left: -10%;
+  transition: left linear 0.2s;
 }
 
 @keyframes nod {

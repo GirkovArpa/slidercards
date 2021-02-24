@@ -47,18 +47,9 @@ async function displayCard(Q, A) {
       }
       if (!correct && !this.parentElement.classList.contains('incorrect')) {
         this.classList.add('incorrect');
-        this.parentElement.classList.add('incorrect', 'incorrect-a');
-        await seconds(0.05);
-        this.parentElement.classList.add('incorrect-b');
-        this.parentElement.classList.remove('incorrect-a');
-        await seconds(0.05);
-        this.parentElement.classList.add('incorrect-a');
-        this.parentElement.classList.remove('incorrect-b');
-        await seconds(0.05);
-        this.parentElement.classList.add('incorrect-b');
-        this.parentElement.classList.remove('incorrect-a');
-        await seconds(0.05);
-        this.parentElement.classList.remove('incorrect-b', 'incorrect');
+        this.parentElement.classList.add('incorrect');
+        await seconds(0.5);
+        this.parentElement.classList.remove('incorrect');
       }
     }
   });
@@ -79,19 +70,13 @@ async function displayCard(Q, A) {
     $('.idk').style.display = 'block';
   });
 
-  await seconds(.5);
-  $('.card').classList.add('a');
+  await seconds(0.5);
+  $('.card').classList.add('flyin');
 }
 
 async function onCorrectAnswer() {
-  $('.card').classList.add('b');
-  await seconds(1);
-  $('.card').classList.add('c');
-  await seconds(.25);
-  $('.card').classList.add('c-2');
-  await seconds(.25);
-  $('.card').classList.add('d');
-  await seconds(.75);
+  $('.card').classList.add('flyout');
+  await seconds(1.3);
   $('.card').remove();
 }
 

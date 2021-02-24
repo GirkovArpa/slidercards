@@ -19,7 +19,7 @@ const until = function (condition) {
   })
 }
 
-const shuffle = function(array) {
+const shuffle = function (array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = ~~(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -27,20 +27,18 @@ const shuffle = function(array) {
 }
 
 async function displayCard(Q, A) {
-  const card = <div class="card" answer={A}>
-    <span class="question">{Q}</span>
-    <input class="answer" novalue="Enter the answer" />
-    <span class="idk">I don't know</span>
-  </div>;
+  const card =
+    <div class="card" answer={A}>
+      <span class="question">{Q}</span>
+      <input class="answer" novalue="Enter the answer" />
+      <span class="idk">I don't know</span>
+    </div>;
 
   $('body').append(card);
   $('.answer').focus();
 
   $('.answer').on('keydown', async function (evt) {
     this.classList.remove('incorrect');
-    if (evt.keyCode === SPACE) {
-      this.parentElement.classList.add('flip');
-    }
     if (evt.keyCode === ENTER) {
       const { answer } = this.parentElement.attributes;
       const correct = this.value === answer;
@@ -63,6 +61,22 @@ async function displayCard(Q, A) {
         this.parentElement.classList.remove('incorrect-b', 'incorrect');
       }
     }
+  });
+
+  $('.idk').on('click', async function () {
+    this.parentElement.classList.add('flip');
+    await seconds(0.25);
+    this.parentElement.classList.remove('flip');
+    $('.question').textContent = A;
+    $('.answer').style.display = 'none';
+    $('.idk').style.display = 'none';
+    await seconds(1);
+    this.parentElement.classList.add('flip');
+    await seconds(0.25);
+    this.parentElement.classList.remove('flip');
+    $('.question').textContent = Q;
+    $('.answer').style.display = 'block';
+    $('.idk').style.display = 'block';
   });
 
   await seconds(.5);

@@ -25,7 +25,7 @@ body {
   background-position: 0 240px;
   background-image: url(face1.png);
   background-repeat: no-repeat;
-  transform: translate(0, -50%) rotate(0deg);
+  transform: translate(0, -50%) rotate(0deg) scale(1.0, 1.0);
   transition: background-position .5s bounce-in, transform .5s expo-out, left .5s expo-out;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 .card.a {
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.0, 1.0);
   left: 50%;
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .card.c {
-  transform: translate(-30%, -50%) rotate(10deg);
+  transform: translate(-30%, -50%) rotate(10deg) scale(1.0, 1.0);
 }
 
 .card.c::marker {
@@ -62,11 +62,11 @@ body {
 }
 
 .card.c-2 {
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.0, 1.0);
 }
 
 .card.d {
-  transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.0, 1.0);
   left: -100px;
 }
 
@@ -80,6 +80,11 @@ body {
 
 .card.incorrect-b {
   left: 51%;
+}
+
+.card.flip {
+  transition: transform 0.25s expo-in-out;
+  transform: translate(-50%, -50%) rotate(0deg) scale(0.0, 1);
 }
 
 .question {
@@ -129,6 +134,7 @@ body {
 }
 
 .idk {
+  behavior: clickable;
   text-transform: uppercase;
   color: rgb(50, 205, 255);
   cursor: pointer;

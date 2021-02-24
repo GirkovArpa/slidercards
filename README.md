@@ -28,3 +28,13 @@ This application uses [Sciter Engine](https://sciter.com), © Terra Informatica 
 ## Attribution
 
 Inspired by [Stretchly](https://github.com/hovancik/stretchly) and [RinyCards](https://github.com/devicedev/riny-cards).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people:
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/4silvertooth"><img src="https://avatars.githubusercontent.com/u/793967?v=3?s=100" width="100px;" alt=""/><br /><sub><b>4silvertooth</b></sub></a><br /><a href="https://github.com/GirkovArpa/slidercards/commit/aec3251bfdd7c22770ad52e6cb4438a4b5daf39f" title="Refactoring">🔨</a>
+  </tr>
+</table>

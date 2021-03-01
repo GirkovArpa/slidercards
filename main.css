@@ -34,26 +34,33 @@ body {
 @keyframes flyout {
   0% {
     foreground-image: url(assets/images/face1.png);
-    foreground-position: 0px 240px;
+    foreground-position-left: 0px;
+    foreground-position-top: 240px;
     foreground-repeat: no-repeat;
-    transform: translate(-50%, -50%) rotate(0deg); 
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  20% {
+    foreground-image: url(assets/images/face1.png);
+    foreground-position-left: 0px;
+    foreground-position-top: 0px;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   40% {
     foreground-image: url(assets/images/face1.png);
-    foreground-position: 0px 0px;
-    transition: foreground-position 1s bounce-in;
-    transform: translate(-50%, -50%) rotate(0deg); 
+    foreground-position-left: 0px;
+    foreground-position-top: 0px;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  45% {
+  60% {
     foreground-image: url(assets/images/face2.png) 0px 0px no-repeat;
-    transform: translate(-50%, -50%) rotate(5deg); 
+    transform: translate(-50%, -50%) rotate(5deg);
   }
   70% {
     foreground-image: url(assets/images/face2.png) 0px 0px no-repeat;
-    transform: translate(-30%, -50%) rotate(10deg); 
+    transform: translate(-30%, -50%) rotate(10deg);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(5deg); 
+    transform: translate(-50%, -50%) rotate(5deg);
   }
 }
 
@@ -70,11 +77,21 @@ body {
 }
 
 @keyframes nod {
-  0%   { left: 51%; }
-  25%  { left: 49%; }
-  50%  { left: 51%; }
-  75%  { left: 49%; }
-  100% { left: 51%; }
+  0% {
+    left: 51%;
+  }
+  25% {
+    left: 49%;
+  }
+  50% {
+    left: 51%;
+  }
+  75% {
+    left: 49%;
+  }
+  100% {
+    left: 51%;
+  }
 }
 
 .card.incorrect {

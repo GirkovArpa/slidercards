@@ -45,6 +45,12 @@ body {
     foreground-position-top: 0px;
     transform: translate(-50%, -50%) rotate(0deg);
   }
+  30% {
+    foreground-image: url(assets/images/face1.png);
+    foreground-position-left: 0px;
+    foreground-position-top: 55px;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
   40% {
     foreground-image: url(assets/images/face1.png);
     foreground-position-left: 0px;

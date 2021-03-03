@@ -39,21 +39,24 @@ body {
     foreground-repeat: no-repeat;
     transform: translate(-50%, -50%) rotate(0deg);
   }
-  20% {
+  15% {
     foreground-position-top: 0px;
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  30% {
-    foreground-position-top: 55px;
+  25% {
+    transform: translate(-50%, -70%) rotate(0deg);
   }
-  40% {
-    foreground-position-top: 0px;
+  35% {
+    transform: translate(-50%, -30%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   60% {
     foreground-image: url(assets/images/face2.png) 0px 0px no-repeat;
     transform: translate(-50%, -50%) rotate(5deg);
   }
-  70% {
-    //foreground-image: url(assets/images/face2.png) 0px 0px no-repeat;
+  80% {
     transform: translate(-30%, -50%) rotate(10deg);
   }
   100% {

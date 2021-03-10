@@ -16,7 +16,7 @@ Modify [cards.json](cards.json) to suit your needs.
 
 - [ ] Replace the graphics, specifically the card faces
 - [ ] Replace the sounds, specifically the correct and incorrect dings
-- [ ] Actually play the sound effects (waiting on next version of Sciter.JS)
+- [x] ~~Actually play the sound effects (waiting on next version of Sciter.JS)~~
 - [x] ~~Add ability to flip card over when you can't remember the answer~~
 - [ ] Use spaced repetition algorithm
 - [ ] Option to customize frequency of card appearances

@@ -2,9 +2,10 @@ import { $, $$ } from '@sciter';
 
 const ENTER = 13;
 const SPACE = 32;
-const AUDIO = { };
+const AUDIO = {};
 
 async function playSound(key) {
+  // https://ttsmp3.com/text-to-speech is useful for realistic text-to-speech
   const file = `assets/audio/${key}.mp3`;
   if (!AUDIO[key]) {
     AUDIO[key] = await Audio.load(file);
@@ -36,15 +37,19 @@ const shuffle = function (array) {
   }
 }
 
-async function displayCard(Q, A) {
+async function displayCard(Q, A, audio) {
   const card =
-    <div class="card" answer={A}>
+    <div class="card" answer={A} audio={audio}>
       <span class="question">{Q}</span>
       <input class="answer" novalue="Enter the answer" />
       <span class="idk">I don't know</span>
+      <span class="play">🔊</span>
     </div>;
 
   $('body').append(card);
+  if (!audio) {
+    $('.play').classList.add('hidden');
+  }
   $('.answer').focus();
 
   $('.answer').on('keydown', async function (evt) {
@@ -72,6 +77,7 @@ async function displayCard(Q, A) {
     $('.question').textContent = A;
     $('.answer').style.display = 'none';
     $('.idk').style.display = 'none';
+    $('.play').style.display = 'none';
     await seconds(1);
     this.parentElement.classList.add('flip');
     await seconds(0.25);
@@ -79,10 +85,20 @@ async function displayCard(Q, A) {
     $('.question').textContent = Q;
     $('.answer').style.display = 'block';
     $('.idk').style.display = 'block';
+    $('.play').style.display = 'block';
+  });
+
+  $('.play').on('click', async function () {
+    const audio = this.parentElement.getAttribute('audio');
+    playSound(audio);
   });
 
   await seconds(0.5);
   $('.card').classList.add('flyin');
+  await seconds(0.5);
+  if (audio) {
+    playSound(audio);
+  }
 }
 
 async function onCorrectAnswer() {
@@ -107,7 +123,7 @@ async function main() {
     }
     const card = cards[i++];
     const { question, answer } = card;
-    displayCard(question, answer);
+    displayCard(question, answer, card.audio);
     await until(() => $('.card') === null);
   }
 }

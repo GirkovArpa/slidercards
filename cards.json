@@ -10,5 +10,10 @@
   {
     "question": "Roses are red, violets are:",
     "answer": "blue"
+  },
+  {
+    "question": "il vino rosso",
+    "answer": "red wine",
+    "audio": "il_vino_rosso"
   }
 ]

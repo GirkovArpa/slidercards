@@ -162,3 +162,19 @@ body {
   margin: 2px 0px 2px 0px;
   padding: 0px 0px 0px 0px;
 }
+
+.play {
+  right: 1em;
+  bottom: 0.25em;
+  position: absolute;
+  behavior: clickable;
+  font-size: 12px;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  hit-margin: 1em;
+}
+
+.hidden {
+  display: none;
+}

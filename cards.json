@@ -6,5 +6,9 @@
   {
     "question": "What's after \"A\"?",
     "answer": "B"
+  },
+  {
+    "question": "Roses are red, violets are:",
+    "answer": "blue"
   }
 ]

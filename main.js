@@ -2,6 +2,16 @@ import { $, $$ } from '@sciter';
 
 const ENTER = 13;
 const SPACE = 32;
+const AUDIO = { };
+
+async function playSound(key) {
+  const file = `assets/audio/${key}.mp3`;
+  if (!AUDIO[key]) {
+    AUDIO[key] = await Audio.load(file);
+  }
+  AUDIO[key].play();
+  AUDIO[key] = await Audio.load(file);
+}
 
 const [screen_width, screen_height] = Window.this.screenBox('frame', 'dimension');
 Window.this.width = screen_width;
@@ -46,6 +56,7 @@ async function displayCard(Q, A) {
         onCorrectAnswer();
       }
       if (!correct && !this.parentElement.classList.contains('incorrect')) {
+        playSound('incorrect');
         this.classList.add('incorrect');
         this.parentElement.classList.add('incorrect');
         await seconds(0.5);
@@ -75,8 +86,9 @@ async function displayCard(Q, A) {
 }
 
 async function onCorrectAnswer() {
+  playSound('correct');
   $('.card').classList.add('animate');
-  $('.animate').on('animationend',async () => {
+  $('.animate').on('animationend', async () => {
     $('.card').classList.add('flyout');
     await seconds(0.3);
     $('.card').remove();

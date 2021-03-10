@@ -124,6 +124,7 @@ async function main() {
     const card = cards[i++];
     const { question, answer } = card;
     displayCard(question, answer, card.audio);
+    await seconds(0.5);
     await until(() => $('.card') === null);
   }
 }
